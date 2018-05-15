@@ -92,3 +92,5 @@ fs.readFile(fileName, 'utf8', function (err,subtitle) {
     console.log("SUCCESS");
   }); 
 });
+// TODO: colocar outros idiomas e coisas: 
+// http://www.thesauruslex.com/typo/eng/enghtml.htm

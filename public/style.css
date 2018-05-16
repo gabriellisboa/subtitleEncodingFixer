@@ -4,18 +4,48 @@ html {
 }
 
 body {
-    width: 100%;
     height: 100%;
-    text-align: center;
-    background-color: #00BCD4;
-    font-size: 20px;
-    font-weight: bold;
+    background: linear-gradient(#79B473, rgb(39, 58, 37))
 }
 
-input {
+div.content {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    background-color: #70A37F;
+    font-family: monospace;
+    padding: 10px;
+    font-weight: bold;
+    margin: -200px auto;
+    top: 50%;
+    color: #4C3957;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid #414073;
+}
+
+label {
     display: inline-block;
     margin-top: 100px;
     font-size: 20px;
+    background-color: #41658A;
+    color: #79B473;
+    padding: 14px;
+    border-radius: 5px;
+    border: 2px solid #414073;
+    cursor: pointer;
+}
+input[type='file'] {
+    display: none
+}
+
+i {
+    display: inline-block;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
 }
 
 div.modal {
@@ -24,7 +54,7 @@ div.modal {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #3838388f;
+    background-color: #78b372ad;
     display: none;
 }
 
@@ -35,12 +65,12 @@ div.modal.visible {
 .load3 {
     width: 100px;
     height: 100px;
-    margin: auto auto;
-    border-radius: 50px;
+    margin: -50px auto;
+    top: 50%;
     position: relative;
-    margin-top: 50%;
-    top: -25%;
+    border-radius: 50px;
 }
+
 .load3 .ball {
     width: 100%;
     height: 100%;
@@ -51,12 +81,12 @@ div.modal.visible {
 }
 .load3 .ball::before {
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
-    border-radius: 5px;
-    background-color: #be258b;
-    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background-color: #41658A;
+    border: 2px solid #414073;
 }
 .load3 .ball:nth-child(2) {
     -webkit-animation-delay: .2s;

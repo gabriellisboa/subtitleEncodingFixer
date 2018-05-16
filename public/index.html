@@ -107,8 +107,14 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <label>Upload the .srt file:</label>
-        <input type="file" name="pic" accept=".srt" onchange="handleChange(this.files)">
+        <div class="content">
+            <h1>Upload the .srt file:</h1>
+            <h5>The dowload will start automatcly after conversion</h5>
+            <label for="input-file">Select File</label>
+            <input type="file" id="input-file" accept=".srt" onchange="handleChange(this.files)">
+            <i>POWERED BY ｇａｂｉｒｏｔｏ</i>
+        </div>
+        
         <div class="modal">
             <div class="load3">
                 <div class="ball"></div>
@@ -117,15 +123,5 @@
                 <div class="ball"></div>
             </div>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <i>POWERED BY GABIROTO</i>
     </body>
 </html>

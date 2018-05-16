@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            var charsList = {
+                "&Aacute;": "Á",
+                "&aacute;": "á",
+                "&Acirc;": "Â",
+                "&acirc;": "â",
+                "&Agrave;": "À",
+                "&agrave;": "à",
+                "&Aring;": "Å",
+                "&aring;": "å",
+                "&Atilde;": "Ã",
+                "&atilde;": "ã",
+                "&Auml;": "Ä",
+                "&auml;": "ä",
+                "&AElig;": "Æ",
+                "&aelig;": "æ",
+                "&Eacute;": "É",
+                "&eacute;": "é",
+                "&Ecirc;": "Ê",
+                "&ecirc;": "ê",
+                "&Egrave;": "È",
+                "&egrave;": "è",
+                "&Euml;": "Ë",
+                "&euml;": "ë",
+                "&ETH;": "Ð",
+                "&eth;": "ð",
+                "&Iacute;": "Í",
+                "&iacute;": "í",
+                "&Icirc;": "Î",
+                "&icirc;": "î",
+                "&Igrave;": "Ì",
+                "&igrave;": "ì",
+                "&Iuml;": "Ï",
+                "&iuml;": "ï",
+                "&Oacute;": "Ó",
+                "&oacute;": "ó",
+                "&Ocirc;": "Ô",
+                "&ocirc;": "ô",
+                "&Ograve;": "Ò",
+                "&ograve;": "ò",
+                "&Oslash;": "Ø",
+                "&oslash;": "ø",
+                "&Otilde;": "Õ",
+                "&otilde;": "õ",
+                "&Ouml;": "Ö",
+                "&ouml;": "ö",
+                "&Uacute;": "Ú",
+                "&uacute;": "ú",
+                "&Ucirc;": "Û",
+                "&ucirc;": "û",
+                "&Ugrave;": "Ù",
+                "&ugrave;": "ù",
+                "&Uuml;": "Ü",
+                "&uuml;": "ü",
+                "&Ccedil;": "Ç",
+                "&ccedil;": "ç",
+                "&Ntilde;": "Ñ",
+                "&ntilde;": "ñ",
+                "lt;": "<",
+                "gt;": ">",
+                "amp;": "&",
+                "quot;": "\"",
+                "&reg;": "®",
+                "&copy;": "©",
+                "&Yacute;": "Ý",
+                "&yacute;": "ý",
+                "&THORN;": "Þ",
+                "&thorn;": "þ",
+                "&szlig;": "ß",
+            };
+
+            function handleChange(file) {
+                var loader = document.getElementsByClassName("modal")[0];
+                loader.classList.add("visible");
+                var reader = new FileReader();
+                reader.readAsText(file[0]);
+                
+
+                reader.onload = function(evt) {
+                    var subtitleReader = evt.srcElement
+
+                    for (var property in charsList) {
+                        if (charsList.hasOwnProperty(property)) {
+                            subtitleReader.result = subtitleReader.result.replace(new RegExp(property, "g"), charsList[property]);
+                        }
+                    }
+
+                    var element = document.createElement('a');
+                    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(subtitleReader.result));
+                    element.setAttribute('download', 'gabiroto-fixed-' + file[0].name);
+
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+                    
+                    setTimeout(function() {
+                        loader.classList.remove("visible");
+                        element.click();
+                    }, 3000)
+
+                    document.body.removeChild(element);
+                }
+            }
+
+        </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <label>Upload the .srt file:</label>
+        <input type="file" name="pic" accept=".srt" onchange="handleChange(this.files)">
+        <div class="modal">
+            <div class="load3">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <i>POWERED BY GABIROTO</i>
+    </body>
+</html>

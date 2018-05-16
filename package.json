@@ -1,0 +1,19 @@
+{
+  "name": "subtitle-fixer",
+  "version": "1.0.0",
+  "description": "> Replaces html entity by its character",
+  "main": "fixSubtitle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriellisboa/subtitleEncodingFixer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriellisboa/subtitleEncodingFixer/issues"
+  },
+  "homepage": "https://github.com/gabriellisboa/subtitleEncodingFixer#readme"
+}
